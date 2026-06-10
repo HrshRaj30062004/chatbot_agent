@@ -1,0 +1,39 @@
+datasource db {
+  provider = "postgresql"
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+enum SenderType {
+  USER
+  AI
+}
+
+enum ChannelType {
+  WEB
+  WHATSAPP
+  INSTAGRAM
+}
+
+model Conversation {
+  id        String      @id @default(uuid())
+  channel   ChannelType @default(WEB)
+  metadata  Json?       
+  createdAt DateTime    @default(now())
+  messages  Message[]
+
+  @@map("conversations")
+}
+
+model Message {
+  id             String       @id @default(uuid())
+  conversationId String
+  conversation   Conversation @relation(fields: [conversationId], references: [id], onDelete: Cascade)
+  sender         SenderType
+  text           String       @db.Text
+  timestamp      DateTime     @default(now())
+
+  @@map("messages")
+}
