@@ -2,9 +2,8 @@
 
 A production-ready, highly robust full-stack AI customer engagement widget designed with strict type safety, modular decoupling, and seamless channel scalability. Built as part of the technical evaluation for the Spur Engineering Team.
 
-- **Live Deployed Application:** [Insert Your Vercel Frontend URL Here]
-- **Core Backend API Endpoints:** [Insert Your Render Backend URL Here]
-
+- **Live Deployed Application:** https://chatbot-agent-silk.vercel.app
+- **Core Backend API Endpoints:** https://chatbot-agent-v2og.onrender.com
 ---
 
 ## 🏗️ Architectural Overview & Design Choices
